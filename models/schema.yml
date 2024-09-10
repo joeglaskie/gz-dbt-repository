@@ -10,13 +10,13 @@ sources:
         description: sales of Greenweez/ we have on row per product_id found in each orders_id
         tests:
           - unique:
-              column_name: "order_id || '-' || products_id"
+              column_name: "(order_id || '-' || products_id)"
         columns:
           - name: date_date
             description: date of purchase
           - name: orders_id
             description: unique identifier of the purchaser
-          - name: product_id
+          - name: products_id
             description: unique identifier of the product
           - name: revenue
             description: money recieved from purchase
@@ -26,7 +26,7 @@ sources:
         identifier: raw_gz_product
         description: products of Greenweez
         columns:
-          - name: product_id
+          - name: products_id
             description: unique identifier for the product and Primary key of the table
             tests:
               - unique
