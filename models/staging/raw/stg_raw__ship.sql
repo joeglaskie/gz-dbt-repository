@@ -13,7 +13,6 @@ renamed as (
         shipping_fee,
         logcost,
         CAST(ship_cost AS FLOAT64)
-
     from source
 
 )
