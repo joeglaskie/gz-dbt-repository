@@ -8,6 +8,9 @@ sources:
       - name: sales
         identifier: raw_gz_sales
         description: sales of Greenweez/ we have on row per product_id found in each orders_id
+        tests:
+          - unique:
+              column_name: "order_id || '-' || products_id"
         columns:
           - name: date_date
             description: date of purchase
@@ -21,6 +24,28 @@ sources:
             description: how many of the product was purchased
       - name: product
         identifier: raw_gz_product
+        description: products of Greenweez
+        columns:
+          - name: product_id
+            description: unique identifier for the product and Primary key of the table
+            tests:
+              - unique
+              - not_null
+          - name: purchase_price
+            description: cost of the product to purchase
       - name: ship
         identifier: raw_gz_ship
+        description: Greenweez shipping costs 
+        columns:
+          - name: orders_id
+            description: identifier of each order and Primary Key 
+            tests:
+              - unique
+              - not_null 
+          - name: shipping_fee
+            description: fee of each shipping
+          - name: logcost
+            description: cost
+          - name: ship_cost
+            description: cost of shipping 
 
