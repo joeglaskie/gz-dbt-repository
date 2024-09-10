@@ -7,6 +7,18 @@ sources:
     tables:
       - name: sales
         identifier: raw_gz_sales
+        description: sales of Greenweez/ we have on row per product_id found in each orders_id
+        columns:
+          - name: date_date
+            description: date of purchase
+          - name: orders_id
+            description: unique identifier of the purchaser
+          - name: product_id
+            description: unique identifier of the product
+          - name: revenue
+            description: money recieved from purchase
+          - name: quantity
+            description: how many of the product was purchased
       - name: product
         identifier: raw_gz_product
       - name: ship
